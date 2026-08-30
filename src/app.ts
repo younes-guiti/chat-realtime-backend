@@ -17,7 +17,7 @@ export function createApp(): Application {
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
-  app.get('/health', (req, res) => {
+  app.get('/health', (_, res) => {
     res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() });
   });
 

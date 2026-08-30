@@ -16,13 +16,13 @@ export function registerPresenceHandlers(io: TypedServer, socket: TypedSocket) {
   socket.on('disconnect', () => handleUserDisconnected(io, socket));
 }
 
-async function handleUserConnected(io: TypedServer, socket: TypedSocket) {
+async function handleUserConnected(_io: TypedServer, socket: TypedSocket) {
   await userRepository.setOnlineStatus(socket.data.userId, true);
 
   socket.broadcast.emit('user_online', { userId: socket.data.userId });
 }
 
-async function handleUserDisconnected(io: TypedServer, socket: TypedSocket) {
+async function handleUserDisconnected(_io: TypedServer, socket: TypedSocket) {
   await userRepository.setOnlineStatus(socket.data.userId, false);
 
   socket.broadcast.emit('user_offline', {

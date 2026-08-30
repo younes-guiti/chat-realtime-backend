@@ -3,7 +3,7 @@ import { authService } from '../services/auth.service';
 import { userRepository } from '../repositories/user.repository';
 import { UnauthorizedError } from '../utils/errors';
 
-export async function authMiddleware(req: Request, res: Response, next: NextFunction) {
+export async function authMiddleware(req: Request, _res: Response, next: NextFunction) {
   try {
     const authHeader = req.headers.authorization;
 

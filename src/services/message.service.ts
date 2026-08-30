@@ -1,7 +1,7 @@
 import { messageRepository } from '../repositories/message.repository';
 import { conversationRepository } from '../repositories/conversation.repository';
 import { SendMessageInput } from '../types/message.types';
-import { ForbiddenError, NotFoundError } from '../utils/errors';
+import { ForbiddenError } from '../utils/errors';
 
 export const messageService = {
   async sendMessage(senderId: string, input: SendMessageInput) {

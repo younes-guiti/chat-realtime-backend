@@ -1,5 +1,4 @@
 import { conversationRepository } from '../repositories/conversation.repository';
-import { userRepository } from '../repositories/user.repository';
 import { CreateConversationInput } from '../types/message.types';
 import { ForbiddenError, NotFoundError, ValidationError } from '../utils/errors';
 

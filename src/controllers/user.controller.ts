@@ -14,9 +14,10 @@ export const userController = {
       }
 
       const users = await userRepository.searchByUsername(query, req.user.id);
-      res.status(200).json({ users });
+      return res.status(200).json({ users });
     } catch (error) {
       next(error);
+      return;
     }
   },
 };

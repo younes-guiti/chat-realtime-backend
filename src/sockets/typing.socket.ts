@@ -9,7 +9,7 @@ import {
 type TypedServer = Server<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>;
 type TypedSocket = Socket<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>;
 
-export function registerTypingHandlers(io: TypedServer, socket: TypedSocket) {
+export function registerTypingHandlers(_io: TypedServer, socket: TypedSocket) {
   socket.on('typing', (conversationId) => handleTyping(socket, conversationId));
   socket.on('stop_typing', (conversationId) => handleStopTyping(socket, conversationId));
 }
